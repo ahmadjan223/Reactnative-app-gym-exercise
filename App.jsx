@@ -1,9 +1,32 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Home from './src/screens/Home';
+const Stack = createNativeStackNavigator()
 export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Splash'>
+        <Stack.Screen
+        name='Splash'
+        component={Splash}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen
+        name='Home'
+        component={Home}
+        options={{headerShown:false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+    // <Splash></Splash>
+  );
+}
+const Splash = ({navigation}) => {
   return (
       <View className="flex-1 flex justify-end bg-slate-400">
         <StatusBar style='light'/>
@@ -21,6 +44,7 @@ export default function App() {
             </Animated.View>
             <Animated.View entering={FadeInDown.delay(200).springify()} className="flex items-center ">
               <TouchableOpacity 
+              onPress={()=>{navigation.navigate('Home')}}
               style={{height:hp(7),width:wp(80)}}
               className="bg-rose-500 flex items-center mx-auto rounded-full border-[2px] justify-center border-neutral-200"
               >
@@ -29,13 +53,5 @@ export default function App() {
             </Animated.View>
           </LinearGradient>
       </View> 
-  );
+  )
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
