@@ -1,19 +1,18 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Button } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import React from "react";
-import {
-  SafeAreaView,
-} from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
-import Slider from "../components/ImageSlider";
+import ImageSlider from "../components/ImageSlider";
+import BodyParts from "../components/BodyParts";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 bg-white flex " edges={['top']}>
       <StatusBar style="dark" />
       <View className="flex-row justify-between items-center mx-5">
         <View className="space-y-2">
@@ -46,7 +45,15 @@ const Home = () => {
       </View>
       {/* slider carousel */}
       <View>
-        <Slider></Slider>
+        <ImageSlider />
+      </View>
+      {/* <Button
+        onPress={() => navigation.navigate("BodyParts")}
+        title="press me"
+      ></Button> */}
+      {/* body parts list */}
+      <View className="flex-1">
+        <BodyParts></BodyParts>
       </View>
     </SafeAreaView>
   );

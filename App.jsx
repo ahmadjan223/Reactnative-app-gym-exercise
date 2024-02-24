@@ -6,6 +6,9 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Home from './src/screens/Home';
+import BodyParts, { BodyPartsCard } from './src/components/BodyParts';
+import Exercises from './src/screens/Exercises';
+
 const Stack = createNativeStackNavigator()
 export default function App() {
   return (
@@ -20,6 +23,11 @@ export default function App() {
         name='Home'
         component={Home}
         options={{headerShown:false}}
+        />
+        <Stack.Screen
+        name='Exercises'
+        component={Exercises}
+        options={{headerShown:false, presentation:'fullScreenModal'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

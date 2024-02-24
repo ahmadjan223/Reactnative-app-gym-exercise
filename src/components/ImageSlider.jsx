@@ -1,35 +1,17 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import Carousel, { ParallaxImages } from 'react-native-snap-carousel';
-import { sliderImage } from '../constraints';
-
-const ItemCard = ({ item, index }, parallaxProps) => {
-  return (
-    <View>
-      <ParallaxImages
-        source={{ uri: item.imageUrl }}
-        containerStyle={{ flex: 1, borderRadius: 8 }}
-        parallaxFactor={0.4}
-        {...parallaxProps}
-      />
-      <Text>{item.title}</Text>
-    </View>
-  );
-};
-
+import { View, Text,Image } from 'react-native'
+import React from 'react'
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 const ImageSlider = () => {
   return (
-    <View>
-      <Text>hello there</Text>
-      <Carousel
-        data={sliderImage}
-        loop={true}
-        autoplay={true}
-        renderItem={ItemCard}
-        hasParallaxImages={true}
-      />
+    <View
+    // style={{width:widthPercentageToDP(100), height:heightPercentageToDP(25) }}
+    className="justify-center items-center p-6 "
+    >
+      <Image
+      className="rounded-3xl"
+      style={{width:widthPercentageToDP(100)-70, height:heightPercentageToDP(25)}}
+      source={require('../assets/slide1.png')} ></Image>
     </View>
-  );
-};
-
-export default ImageSlider;
+  )
+}
+export default ImageSlider
