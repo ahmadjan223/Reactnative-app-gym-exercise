@@ -36,7 +36,6 @@ const Exercises = ({route,navigation}) => {
       >
         <Icon name="caret-back-outline" size={hp(4)} color="white"/>
       </TouchableOpacity>
-      <TouchableOpacity>
         <View className="mx-4 space-y-3 mt-4">
           <Text
           style={{fontSize:hp(3)}}
@@ -50,7 +49,6 @@ const Exercises = ({route,navigation}) => {
             <ExerciseList data={exercises}></ExerciseList>
           </View>
         </View>
-      </TouchableOpacity>
     </ScrollView>
   )
 }

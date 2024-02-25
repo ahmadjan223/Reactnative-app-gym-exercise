@@ -7,6 +7,7 @@ import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Home from './src/screens/Home';
 import Exercises from './src/screens/Exercises';
+import ModalExerciseDetails from './src/components/ModalExerciseDetails';
 
 const Stack = createNativeStackNavigator()
 export default function App() {
@@ -27,6 +28,11 @@ export default function App() {
         name='Exercises'
         component={Exercises}
         options={{headerShown:false, presentation:'fullScreenModal'}}
+        />
+        <Stack.Screen
+        name='ExerciseDetails'
+        component={ModalExerciseDetails}
+        options={{headerShown:false, presentation:'modal'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
