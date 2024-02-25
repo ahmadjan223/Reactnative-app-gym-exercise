@@ -6,7 +6,6 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Home from './src/screens/Home';
-import BodyParts, { BodyPartsCard } from './src/components/BodyParts';
 import Exercises from './src/screens/Exercises';
 
 const Stack = createNativeStackNavigator()

@@ -27,7 +27,7 @@ const BodyPartsCard=({index,item})=>{
   return(
     <View>
       <TouchableOpacity
-      onPress={()=>navigation.navigate('Exercises',25)}
+      onPress={()=>navigation.navigate('Exercises',item )}
       style={{width:wp(44), height:wp(52)}}
       className="flex justify-end p-4 mb-4"
       >
