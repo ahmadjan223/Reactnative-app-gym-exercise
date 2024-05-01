@@ -33,7 +33,7 @@ const Home = ({ navigation }) => {
           <Image
             className="rounded-full "
             style={{ height: hp(6), width: hp(6) }}
-            source={require("../assets/icon.png")}
+            source={require("../assets/icon.jpg")}
           ></Image>
           <View
             className="bg-neutral-200 justify-center items-center rounded-full flex border-[3px] border-neutral-300"
@@ -44,7 +44,7 @@ const Home = ({ navigation }) => {
         </View>
       </View>
       {/* slider carousel */}
-      <View>
+      <View className="flex my-8">
         <ImageSlider />
       </View>
       {/* <Button

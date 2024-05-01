@@ -1,17 +1,37 @@
-import { View, Text,Image } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
-import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-const ImageSlider = () => {
+import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { sliderImage } from '../constraints';
+
+export default function ImageSlider() {
   return (
-    <View
-    // style={{width:widthPercentageToDP(100), height:heightPercentageToDP(25) }}
-    className="justify-center items-center p-6 "
-    >
-      <Image
-      className="rounded-3xl"
-      style={{width:widthPercentageToDP(100)-70, height:heightPercentageToDP(25)}}
-      source={require('../assets/slide1.png')} ></Image>
-    </View>
+    <Carousel
+        data={sliderImage}
+        loop={true}
+        autoplay={true}
+        renderItem={ItemCard}
+        hasParallaxImages={true}
+        sliderWidth={wp(100)}
+        firstItem={1}
+        autoplayInterval={4000}
+        itemWidth={wp(100)-70}
+        slideStyle={{display: 'flex', alignItems: 'center'}}
+    />
+
   )
 }
-export default ImageSlider
+
+const ItemCard = ({item, index}, parallaxProps)=>{
+    return (
+        <View style={{width: wp(100)-70, height: hp(25)}}>
+            <ParallaxImage
+                source={item}
+                containerStyle={{borderRadius: 30, flex:1}}
+                style={{resizeMode: 'contain'}}
+                parallaxFactor={1}
+                {...parallaxProps}
+            />
+        </View>
+    )
+}

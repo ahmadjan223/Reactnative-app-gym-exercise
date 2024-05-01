@@ -17,7 +17,7 @@ const Exercises = ({route,navigation}) => {
   }, [item]);
   const getExercises = async (bodyPart)=>{
     let data = await fetchExercisesByBodypart(bodyPart)
-    console.log('get data',data)
+    // console.log('get data',data)
     setExercises(data)
   }
 

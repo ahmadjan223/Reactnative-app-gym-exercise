@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/AntDesign";
 
 import {
   heightPercentageToDP as hp,
@@ -28,10 +28,10 @@ const ModalExerciseDetails = ({ route, navigation }) => {
           marginTop: hp(8),
           right: hp(1),
         }}
-        className="bg-neutral-600 mx-4 absolute flex rounded-full pr-1  justify-center items-center mx-4"
+        className="mx-2 absolute rounded-full mt-2 right-0"
         onPress={() => navigation.goBack()}
       >
-        <Icon name="caret-back-outline" size={hp(4)} color="white" />
+        <Icon name="closecircle" size={hp(4.5)} color="#f43f5e" />
       </TouchableOpacity>
       <ScrollView className="mx-4 space-y-2 mt-3 mb-3">
         <Text
