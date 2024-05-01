@@ -16,7 +16,7 @@ This repository contains the source code for a Gym Exercise app built using Reac
 
 ## Screenshots
 <p align="center">
-  <img src="src/images/ss1.jpg" width="250" hspace="20">
-  <img src="src/images/ss2.jpg" width="250" hspace="20">
-  <img src="src/images/ss3.jpg" width="250" hspace="20">
+  <img src="src/images/ss1.jpg" width="200" hspace="20">
+  <img src="src/images/ss2.jpg" width="200" hspace="20">
+  <img src="src/images/ss3.jpg" width="200" hspace="20">
 </p>
